@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-catch */
 import conf from "../conf/conf.js";
-import Client, { Account, ID } from "appwrite";
+import { Client, Account, ID } from "appwrite";
 
 class AuthService {
   client = new Client();
