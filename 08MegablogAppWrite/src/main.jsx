@@ -26,6 +26,8 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: (
+          /*           authentication controls - if someone
+          try to go into page by url then it forbids */
           <AuthLayout authentication={false}>
             <Login />
           </AuthLayout>
