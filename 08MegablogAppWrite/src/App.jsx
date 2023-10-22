@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import authService from "../src/appwrite/auth";
 import { login, logout } from "../src/store/authSlice";
 import { Header, Footer } from "./componenets";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -26,8 +27,8 @@ function App() {
       <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
         <div className="w-full-block">
           <Header />
-          <main>
-            {/* <Outlet/> */}
+          <main className="m-5">
+            <Outlet/>
           </main>
           <Footer />
         </div>

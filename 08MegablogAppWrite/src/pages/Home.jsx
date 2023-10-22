@@ -25,7 +25,7 @@ function EditPost() {
         <PostForm post={post} />
       </Container>
     </div>
-  ) : null;
+  ) : <h2>Welcome , Mega Blog</h2>;
 }
 
 export default EditPost;

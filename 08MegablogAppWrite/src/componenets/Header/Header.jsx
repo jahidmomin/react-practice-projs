@@ -3,7 +3,7 @@ import { Container, Logo, LogoutBtn } from "../index";
 import { useNavigate, Link } from "react-router-dom";
 
 export default function Header() {
-  const authStatus = useSelector((state) => state.auth.status);
+  const authStatus = useSelector((state) => state.status);
   const navigate = useNavigate();
 
   const navItems = [

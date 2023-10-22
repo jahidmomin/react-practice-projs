@@ -13,8 +13,18 @@ export class Service {
     this.databases = new Databases(this.client);
     this.bucket = new Storage(this.client);
   }
-  async createPost({ title, slug, content, featuredImage, status, userId }) {
+  async createPost({ title, slug, content, featuredimage, status, userId }) {
     try {
+      console.log("=================CREATE POST===================");
+      console.log({
+        title,
+        content,
+        featuredimage,
+        status,
+        userId,
+      });
+      console.log("====================================");
+
       return await this.databases.createDocument(
         conf.appwriteDBId,
         conf.appwriteCollectionId,
@@ -22,7 +32,7 @@ export class Service {
         {
           title,
           content,
-          featuredImage,
+          featuredimage,
           status,
           userId,
         }
@@ -117,7 +127,10 @@ export class Service {
 
   getFilePreview(fileId) {
     try {
-      return this.bucket.getFilePreview(conf.appwriteBucketId, fileId);
+      console.log(" Get File Preview ", conf.appwriteBucketId, fileId);
+      const url = this.bucket.getFilePreview(conf.appwriteBucketId, fileId);
+      console.log("URL", url.href);
+      return url.href;
     } catch (error) {
       console.log(" getFilePreview ::" + error);
       return false;
